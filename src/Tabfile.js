@@ -1,4 +1,4 @@
-import React, { useEffect, useState}  from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
@@ -65,14 +65,6 @@ export default function Tabfile(props) {
     setValue(newValue);
   };
 
-  // const [data, setData]=React.useState(null);
-  // const fetchData=async()=>{
-  //     const record=await getData();
-  //     setData(record);
-  //     }
-  // useEffect(() => {
-  //     fetchData();
-  // }, [])
 
   const totalcustcount=data?data.overview.totalCustomerCount:"";
   const processedcustcount=data?data.overview.processedCustomerCount:"";

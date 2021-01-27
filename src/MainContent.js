@@ -14,6 +14,7 @@ import RightIc from './images/Right.svg';
 import Tabfile from './Tabfile';
 import HomePage from '../src/views/HomePage'
 import Fab from '@material-ui/core/Fab';
+import CircularProgress from '@material-ui/core/CircularProgress';
  const useStyles = makeStyles(theme => ({
   
    root:{
@@ -95,6 +96,7 @@ freedadiv:{
   borderRadius:'10vw',  
   display:'flex',
   height:'7vh',
+  
   
   justifyContent:'space-around',
    marginLeft:'12vw',
@@ -201,7 +203,7 @@ function MainContent() {
   }, [])
 
   
-console.log("MAIN",data);
+// console.log("MAIN",data);
 return (
   <main className={classes.fullWidth}>
     {/* Header */}
@@ -220,7 +222,7 @@ return (
       <InputBase className={classes.Searchinput} placeholder="Search Name"/>
       <ArrowDropDownIcon />
         </div>
-       <Fab variant="extended" className={classes.freedadiv}>
+       <Fab variant="extended" className={classes.freedadiv} >
         <Typography variant='h6'  style={{color:'white',display:'flex', alignItems:'center',fontFamily:'Roboto,Regular' , fontSize:'1.2vw'}}> FREEDA
         <img src={FreedaIcon} alt="FreedaIcon" className={classes.Icon}  />
        </Typography>

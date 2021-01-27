@@ -16,7 +16,7 @@ function componentGetter(props){
         );
       case MY_RENDER_APP.SECOND_CARD:
         return (
-              <SecondCard  />
+              <SecondCard data={data}  />
         );
      
       default:

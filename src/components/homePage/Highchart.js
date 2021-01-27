@@ -7,9 +7,8 @@ const Histogram = (props) => {
   const totalopenamount=props.totalopenamount;
 
   Pendingamount=Pendingamount.slice(0,(Pendingamount.length-1));
-   console.log(props);
+  //  console.log(props);
 
-  // const ContainerName='container'+props.num;
   Highcharts.setOptions({
     colors: ['#5DAAE0'],
     
@@ -23,29 +22,48 @@ const Histogram = (props) => {
         legend:{
           enabled:false
         },
+
         yAxis:{
         gridLineWidth:0,
+          labels:{
+            enabled:false,
+          },
+          title:null,
+          
         },
         xAxis:{
           categories:['Current Due',...BName],
           padding:0,
           margin:0,
-        },
-        labels:{autoRotation:[0],
+          
+        labels:{
+          autoRotation:[0],
+       
         style:{
           fontSize:'0.5rem',
+          textColor:'#FFFFFFA6',
           color:'#FFFFFFA6',
           textOverflow:'none',
           textOutline:false,
           textShadow:false,
-
+          fontFamily:'Roboto',
         },
-      },
+        },
+    },
         plotOptions: {
           series: {
               animation: {
                   duration: 800
               }
+          },
+          column:{
+            dataLabels:{
+              style:{
+                color:"#FFFFFFD9",
+                fontFamily:'Roboto',
+              },
+              enabled:true,
+            }
           }
       },
         credits:{
@@ -66,11 +84,11 @@ const Histogram = (props) => {
 };
 
   useEffect(()=> {
-        const call=renderChart();
+        renderChart();
   });
   return(
     
-    <div id={props.number} style={{height:'inherit',width:'inherit',}}>
+    <div id={props.number} style={{height:'30vh',width:'70vh',}}>
       
     </div>
   )

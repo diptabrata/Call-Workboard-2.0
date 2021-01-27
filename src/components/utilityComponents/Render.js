@@ -14,9 +14,8 @@ constructor(props){
   getComponent = componentID => {
     if (this.props.data!==null && componentID==="customer"){
     this.customerIndex+=1;
-    if (this.customerIndex >=5){
-      this.customerIndex%=5;
-    }
+
+   
     
     return <ComponentGetter componentID={componentID} data={this.props.data && this.props.data[this.customerIndex]}/>;
     }
