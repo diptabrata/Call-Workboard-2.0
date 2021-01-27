@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  font-family:'Roboto';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: 'Roboto';
+}
+
+
+html{
+  font-size: calc(0.68vh + 0.68vw);
+  font-family: 'Roboto';
+  
+
+}
+
