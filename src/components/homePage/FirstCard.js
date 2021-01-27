@@ -21,7 +21,7 @@ cardimage:{
 }
 }));
 export default function FirstCard(props) {
-  const [num]=React.useState(nanoid)
+  const [num]=React.useState(nanoid);
   const classes = useStyles(); 
 
   
@@ -30,8 +30,8 @@ const {data}=props;
 const customername=data?data.customerName:'';
 const customerid=data?data.customerNumber:'';
 const Totalbroken=data?data.totalBrokenPromises:'';
-const Pendingamount=data?data.pastDueBucketDocumentAmount:'';
-const BName=data?data.bucketNames:'';
+const Pendingamount=data?data.pastDueBucketDocumentAmount:[];
+const BName=data?data.bucketNames:[];
 const totalopenamount=data?data.totalCurrentOpenAmount:'';
 var promise="";
 var imageurl="";

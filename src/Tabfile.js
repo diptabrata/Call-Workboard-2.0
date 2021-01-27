@@ -58,6 +58,7 @@ const useStyles = makeStyles({
 
 export default function Tabfile(props) {
   const {data}=props;
+  
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -78,6 +79,7 @@ export default function Tabfile(props) {
   return (
     <Paper className={classes.tabbar} elevation={0} > 
     <div>
+   
       <div className={classes.align}>
         <Tabs  
         TabIndicatorProps={{style: {background:'#FFFFFF'}}}
@@ -88,6 +90,7 @@ export default function Tabfile(props) {
           position="fixed"    
           
         >
+            
           <Tab label={<span className={classes.tabtext} >TO CALL LIST({totalcustcount})</span>}/>
           <Tab label={<span className={classes.tabtext} style={{color:'#5DAAE0BF'}}>FINISHED CALL LIST({processedcustcount})</span>}/>
         

@@ -205,9 +205,11 @@ function MainContent() {
   
 // console.log("MAIN",data);
 return (
+  
   <main className={classes.fullWidth}>
     {/* Header */}
     <div >
+  
       <Typography variant='h6'className={classes.header}  >
       <ArrowBackIcon className={classes.headerarrow} />
         Call&nbsp;Workboard  
@@ -237,8 +239,9 @@ return (
   
  {/* Charts */}
     <div className={classes.content}>
+    
     <HomePage data={data && data.workbookItems}/>
-  {/* <Body data={data && data}/> */}
+  
     </div>
     {/* Footer */}
     <div className={classes.footer}>

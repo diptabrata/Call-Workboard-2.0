@@ -12,18 +12,8 @@ constructor(props){
 
 }
   getComponent = componentID => {
-    if (this.props.data!==null && componentID==="customer"){
-    this.customerIndex+=1;
-
-   
-    
-    return <ComponentGetter componentID={componentID} data={this.props.data && this.props.data[this.customerIndex]}/>;
-    }
-    else
-    {
-      // console.log("Rendering",componentID);
-      return <ComponentGetter componentID={componentID} data={this.props.data ? this.props.data:""}/>;
-    }
+      this.customerIndex+=1;  
+      return <ComponentGetter totaldata={this.props.data} componentID={componentID} data={this.props.data && this.props.data[this.customerIndex]}/>;
   };
 
   render() {
@@ -47,10 +37,3 @@ constructor(props){
 
 export default withWidth()(Render);
 
-// export default  function Grids(props) {
-  
-//   return (
-//       <div>Hello </div>
-    
-//       );
-//     }

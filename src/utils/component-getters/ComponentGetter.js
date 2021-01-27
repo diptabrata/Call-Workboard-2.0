@@ -7,7 +7,8 @@ function componentGetter(props){
 
   const {componentID} = props;
   const {data}=props;
-  console.log("GETTER",data);
+
+  
     switch (componentID) {
       case MY_RENDER_APP.FIRST_CARD:
         return (                   
@@ -16,7 +17,7 @@ function componentGetter(props){
         );
       case MY_RENDER_APP.SECOND_CARD:
         return (
-              <SecondCard data={data}  />
+              <SecondCard data={props.totaldata}  />
         );
      
       default:
@@ -26,10 +27,3 @@ function componentGetter(props){
 
 export default componentGetter;
 
-// export default  function Grids(props) {
-  
-//   return (
-//       <div>Hello </div>
-    
-//       );
-//     }

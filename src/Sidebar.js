@@ -104,10 +104,10 @@ const useStyles = makeStyles((theme) => ({
   avataricon:{
     width:'3vw',
     height:'5vh',
-    
+   
     ['@media (min-width:1920px)']:{
       height:'5vh',
-      width:'3vw'
+      width:'3vw', 
 },
   
 ['@media (min-width:3840px)']:{

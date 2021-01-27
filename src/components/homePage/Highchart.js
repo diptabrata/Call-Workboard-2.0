@@ -7,7 +7,9 @@ const Histogram = (props) => {
   const totalopenamount=props.totalopenamount;
 
   Pendingamount=Pendingamount.slice(0,(Pendingamount.length-1));
-  //  console.log(props);
+  
+  const totalamount=Pendingamount.reduce(function(a,b){return a+b;},[]);
+  // console.log(totalamount);
 
   Highcharts.setOptions({
     colors: ['#5DAAE0'],
@@ -35,7 +37,8 @@ const Histogram = (props) => {
           categories:['Current Due',...BName],
           padding:0,
           margin:0,
-          
+          lineWidth:'1',
+          lineColor:'#58687E',
         labels:{
           autoRotation:[0],
        
@@ -63,9 +66,21 @@ const Histogram = (props) => {
                 fontFamily:'Roboto',
               },
               enabled:true,
+              overflow:'allow',
+              crop:false,
+              
+              formatter:function(){
+                return `               
+                ${((Math.ceil(this.y)/totalamount)*100).toFixed(1)}%
+              <br/>
+              $${Math.ceil((this.y)/1000)}M
+              `;
+              },
+                
+              },
             }
-          }
-      },
+          },
+    
         credits:{
         enabled:false 
         },
