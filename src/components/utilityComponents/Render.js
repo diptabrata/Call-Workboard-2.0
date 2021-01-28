@@ -11,9 +11,14 @@ constructor(props){
   this.customerIndex=-1;
 
 }
+//  componentDidMount(){
+//    window.addEventListener("resize",()=>this.customerIndex=-1)
+//  }
   getComponent = componentID => {
+
       this.customerIndex+=1;  
-      return <ComponentGetter totaldata={this.props.data} componentID={componentID} data={this.props.data && this.props.data[this.customerIndex]}/>;
+
+      return <ComponentGetter totaldata={this.props.data.slice(6,this.props.data.length)} componentID={componentID} data={this.props.data && this.props.data[this.customerIndex]}/>;
   };
 
   render() {

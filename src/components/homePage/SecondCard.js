@@ -18,19 +18,31 @@ export default function SecondCard(props) {
   const classes = useStyles(); 
   const{data}=props;
   console.log("Second",data);
+  let totalopenamount=0;
+  let Pendingamount=[];
+if (data){
+data.forEach(item => totalopenamount=totalopenamount+item.totalCurrentOpenAmount
+  )  
+for (let i=0;i<5;i++)
+{
+  let summation=0;
+  data.forEach(item=>summation=summation+item.pastDueBucketDocumentAmount[i])
+  Pendingamount[i]=summation;
+}
+  
+}
+console.log("sum",Pendingamount)
 
-  if ()
-
-  const Pendingamount=data?data.pastDueBucketDocumentAmount:[];
-  const BName=data?data.bucketNames:[];
-  const totalopenamount=data?data.totalCurrentOpenAmount:'';
+  // const Pendingamount=data?data.pastDueBucketDocumentAmount:[];
+  // const BName=data?data.bucketNames:[];
+  // const totalopenamount=data?data.totalCurrentOpenAmount:'';
 
     return (
   
       <Card  style={{backgroundColor:"#273D49BF",height:'37vh'}}>
             <div>
          <CardHeader title={<Typography style={{color:'#FFFFFF80',fontFamily:'Roboto',fontWeight:'bold',fontSize:'1.125rem'}}>Remaining Balance Summary</Typography>}/>
-       
+         <Histogram  Pendingamount={Pendingamount} totalopenamount={totalopenamount}/>
        </div>
       </Card>
 

@@ -58,7 +58,6 @@ const useStyles = makeStyles({
 
 export default function Tabfile(props) {
   const {data}=props;
-  
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 

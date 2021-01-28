@@ -34,6 +34,7 @@ const Histogram = (props) => {
           
         },
         xAxis:{
+          fontFamily:'Roboto',
           categories:['Current Due',...BName],
           padding:0,
           margin:0,
@@ -60,6 +61,7 @@ const Histogram = (props) => {
               }
           },
           column:{
+            widht:'0.rem',
             dataLabels:{
               style:{
                 color:"#FFFFFFD9",

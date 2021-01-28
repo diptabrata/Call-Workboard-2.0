@@ -7,7 +7,7 @@ import Histogram  from './Highchart';
 import PromiseIcon from '../../images/Promise.svg';
 import BrokenIcon from '../../images/Broken.svg';
 import Divider from '@material-ui/core/Divider';
-import { getData } from '../../apicall/Apicalling';
+
 import { nanoid } from 'nanoid';
 
 const useStyles = makeStyles(theme => ({
