@@ -65,10 +65,11 @@ const Histogram = (props) => {
           series: {
               animation: {
                   duration: 800
-              }
+              },
+              pointWidth: 40,
           },
           column:{
-            widht:'0.rem',
+            
             dataLabels:{
               style:{
                 color:"#FFFFFFD9",
