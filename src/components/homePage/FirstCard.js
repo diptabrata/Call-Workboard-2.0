@@ -7,7 +7,7 @@ import Histogram  from './Highchart';
 import PromiseIcon from '../../images/Promise.svg';
 import BrokenIcon from '../../images/Broken.svg';
 import Divider from '@material-ui/core/Divider';
-
+import Box from '@material-ui/core/Box';
 import { nanoid } from 'nanoid';
 
 const useStyles = makeStyles(theme => ({
@@ -51,7 +51,7 @@ else{
 
     return (
   
-      <Card  style={{backgroundColor:"#273D49BF",height:'37vh'}}>
+      <Box boxShadow={10} style={{backgroundColor:"#273D49BF",height:'37vh'}}>
             <div>
          <CardHeader title={<Typography style={{color:'#FFFFFF80',fontFamily:'Roboto',fontWeight:'bold',fontSize:'1.125rem', textTransform:'capitalize'}}>{customername}</Typography>}/>
        
@@ -74,7 +74,7 @@ else{
               </div>
            </div>
         </div>
-      </Card>
+      </Box>
 
 
     );

@@ -2,15 +2,18 @@ import React, { useEffect } from 'react';
 import Highcharts from 'highcharts';
 
 const Histogram = (props) => {
+  
   var Pendingamount=props.Pendingamount && props.Pendingamount;
-  const BName=props.BName;
-  const totalopenamount=props.totalopenamount;
+
+  const BName=props.BName?props.BName:[];
+  
+  const totalopenamount=props.totalopenamount&&props.totalopenamount;
 
   Pendingamount=Pendingamount.slice(0,(Pendingamount.length-1));
   
-  const totalamount=Pendingamount.reduce(function(a,b){return a+b;},[]);
-  // console.log(totalamount);
-
+  const totalamount=Pendingamount.reduce(function(a,b){return a+b;},0);
+  console.log("total",totalamount);
+  
   Highcharts.setOptions({
     colors: ['#5DAAE0'],
     
@@ -33,6 +36,10 @@ const Histogram = (props) => {
           title:null,
           
         },
+        loading: {
+          hideDuration: 500,
+          showDuration: 1000
+      },
         xAxis:{
           fontFamily:'Roboto',
           categories:['Current Due',...BName],
@@ -40,7 +47,7 @@ const Histogram = (props) => {
           margin:0,
           lineWidth:'1',
           lineColor:'#58687E',
-        labels:{
+         labels:{
           autoRotation:[0],
        
         style:{
@@ -93,7 +100,6 @@ const Histogram = (props) => {
         series: [{
           data: [totalopenamount,...Pendingamount],
         }],
-  
         
     
     });

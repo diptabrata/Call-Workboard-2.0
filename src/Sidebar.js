@@ -88,17 +88,27 @@ const useStyles = makeStyles((theme) => ({
     marginTop:'auto',
     marginRight:'auto',
     marginLeft:'auto',
-    
+    ['@media (min-width:982px)']:{
+      marginTop:'85vh',
+      marginRight:'auto',
+      marginLeft:'auto',
+},
+    ['@media (min-width:1024px)']:{
+      marginTop:'85vh',
+      marginRight:'auto',
+      marginLeft:'auto',
+},
     ['@media (min-width:1920px)']:{
-      marginTop:'89vh',
+      marginTop:'87vh',
       marginRight:'auto',
       marginLeft:'auto',
 },
   
 ['@media (min-width:3840px)']:{
-  marginTop:'90vh',
+     marginTop:'88vh',
     marginRight:'auto',
     marginLeft:'auto',
+   
 },
   },
   avataricon:{

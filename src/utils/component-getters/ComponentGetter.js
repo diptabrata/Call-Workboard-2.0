@@ -8,7 +8,7 @@ function componentGetter(props){
   const {componentID} = props;
   const {data}=props;
 
-  
+  // console.log("GE",props.totaldata)
     switch (componentID) {
       case MY_RENDER_APP.FIRST_CARD:
         return (                   

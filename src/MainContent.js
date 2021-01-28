@@ -46,9 +46,9 @@ header: {
   
 },
 headerarrow: {
-  marginTop:15,
-  marginRight:10,
-  marginLeft:10,
+  marginTop:'1.5vh',
+  marginRight:'1vw',
+  marginLeft:'-4vw',
   fontSize:'1.9vw',
   color:'white',
  
@@ -71,11 +71,11 @@ Icon:{
 Searchbox:{
   display:'flex',  
   border: '1px solid #5DAAE0',
-  borderRadius:'20px',
+  borderRadius:'5rem',
   alignItems:'center',
   height:'6vh',
   marginTop:'1vh',
- 
+ marginRight:'-2vw',
   ['@media (min-width:3840px)']:{
     borderRadius:'50px',
     height:'6vh',
@@ -99,7 +99,7 @@ freedadiv:{
   
   
   justifyContent:'space-around',
-   marginLeft:'12vw',
+   marginLeft:'7vw',
    ['@media (min-width:1920px)']:{
     width:'8vw',
     height:'7vh',
@@ -121,60 +121,20 @@ freedadiv:{
     display:'flex',
     justifyContent:'center',
     backgroundColor:'#FC7500',
-    width:'10vw',
+    width:'11vw',
     height:'2.5vh',
     border:'1px solid #FC7500 ',
-    borderRadius:'8px',
+    borderBottomLeftRadius:'30vw',
+    borderBottomRightRadius:'30vw',
     marginLeft:'20vw',
     ['@media (min-width:3840px)']:{
-      borderRadius:'20px',
-      width:'10vw',
+      borderBottomLeftRadius:'30vw',
+      borderBottomRightRadius:'30vw',
+      width:'11vw',
        height:'3vh',
      },
   },
-  outertab:{
-    display:'flex',
-    flexDirection:'row',
-    justifyContent:'flex-end',
-    marginRight:'1vw',
-    
-  },
-  innertab:{
-    paddingRight:'1vw',
-    paddingLeft:'1vw',
-    paddingTop:0,
-    marginLeft:'auto',
-    marginRight:'auto',
-    
-    // position:'fixed'
-  },
-  tabbar:{
-    display:'flex',
-    justifyContent:'space-between',
-    backgroundColor:'#58687E',
-    ['@media (min-width:3840px)']:{
-     fontSize:'1.5rem'
-    },
-    
-  },
-  tabtext:{
-    display:'flex',
-    color:'white',
-    fontSize:'1rem',
-    // ['@media (min-width:982px)']:{
-    //   fontSize:'1rem'
-    //  },
-    // ['@media (min-width:3840px)']:{
-    //   fontSize:'1rem'
-    //  },
-     
-  },
-  spanstyle:{
-    color:'white',
-    fontSize:'1.5rem',
-    
-     
-  },
+
   centerboxtext:{
     color:'white',fontSize:'0.8vw',
     // ['@media (min-width:3840px)']:{
@@ -245,7 +205,7 @@ return (
     </div>
     {/* Footer */}
     <div className={classes.footer}>
-    <Footer/>
+    <Footer data={data && data.workbookItems}/>
     </div>
   </main>
 
