@@ -63,17 +63,19 @@ const Histogram = (props) => {
     },
         plotOptions: {
           series: {
+              borderColor: '',
               animation: {
                   duration: 800
               },
-              pointWidth: 40,
+              
           },
           column:{
             
             dataLabels:{
               style:{
-                color:"#FFFFFFD9",
+                color:"#FFFFFF80",
                 fontFamily:'Roboto',
+                textOutline: '',
               },
               enabled:true,
               overflow:'allow',

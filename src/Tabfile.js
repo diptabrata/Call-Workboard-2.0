@@ -6,6 +6,7 @@ import Tab from '@material-ui/core/Tab';
 import { Divider } from '@material-ui/core';
 import { getData } from './apicall/Apicalling';
 import { Typography } from '@material-ui/core';
+
 const useStyles = makeStyles({
   outertab:{
     display:'flex',
@@ -32,10 +33,31 @@ const useStyles = makeStyles({
     },
     
   },
+  align:{
+  display:'flex',
+  maxHeight:'5vh',
+  position:'fixed',
+  "&$selected": {
+    color:'white',
+  },
+  selected: {}
+  },
+
   tabtext:{
     display:'flex',
-    color:'white',
+    color:'#5DAAE0BF',
     fontSize:'0.8rem',
+    
+    flexGrow: 1,
+    ['@media (min-width:982px)']:{
+      height:'2vh'
+     },
+     ['@media (min-width:3840px)']:{
+      height:'5vh'
+     },
+    
+    
+  
     // ['@media (min-width:982px)']:{
     //   fontSize:'1rem'
     //  },
@@ -47,13 +69,23 @@ const useStyles = makeStyles({
   spanstyle:{
     color:'white',
     fontSize:'1.5rem',
-    
-     
+  },
+  spaninstyle:{
+    color:'white',
+    fontSize:'0.8rem',
   },
   subtitlespan:{
     fontSize:'0.7rem',
   },
-
+  spanmax:{
+    color:'#FFFFFFA6',
+    fontSize:'0.8rem',
+  },
+  spandivision:{
+    color:'#FFFFFFA6',
+    fontSize:'1.5rem',
+  },
+ 
 });
 
 export default function Tabfile(props) {
@@ -90,8 +122,8 @@ export default function Tabfile(props) {
           
         >
             
-          <Tab label={<span className={classes.tabtext} >TO CALL LIST({totalcustcount})</span>}/>
-          <Tab label={<span className={classes.tabtext} style={{color:'#5DAAE0BF'}}>FINISHED CALL LIST({processedcustcount})</span>}/>
+          <Tab label={<span className={classes.tabtext} style={{color:'white'}}>TO CALL LIST({totalcustcount})</span>}/>
+          <Tab label={<span className={classes.tabtext} >FINISHED CALL LIST({processedcustcount})</span>}/>
         
         </Tabs>
       </div>
@@ -99,7 +131,7 @@ export default function Tabfile(props) {
     <div className={classes.outertab}>
           <div className={classes.innertab}>
             <div style={{color:'#FFFFFFA6'}}>
-             <span className={classes.spanstyle}>{totalcalled}/</span>{totalcalling}
+             <span className={classes.spanstyle}>{totalcalled}</span><span className={classes.spandivision}>/</span><span className={classes.spanmax}>{totalcalling}</span>
             </div>
             <div style={{color:'#5DAAE0'}}>
             <Typography className={classes.subtitlespan}>  Total Customer Called  </Typography>
@@ -109,9 +141,9 @@ export default function Tabfile(props) {
           <div className={classes.innertab}>
             <div style={{color:'#FFFFFFA6'}}>
               <span className={classes.spanstyle}>{Math.round(timespentoncall/60)}</span>
-              <span className={classes.spanstyle}>hr</span>
+              <span className={classes.spaninstyle}>hr</span>
               <span className={classes.spanstyle}>&nbsp;{Math.round(timespentoncall%60)}</span>
-              <span className={classes.spanstyle}>min</span>/ {timetospentoncall/60}hr
+              <span className={classes.spaninstyle}>min</span> <span className={classes.spandivision}>/</span><span className={classes.spanmax}>{timetospentoncall/60}hr</span>
             </div>
 
             <div style={{color:'#5DAAE0'}}>
@@ -122,7 +154,7 @@ export default function Tabfile(props) {
           <Divider orientation="vertical" flexItem />
           <div className={classes.innertab}>
             <div style={{color:'#FFFFFFA6'}}>
-            <span className={classes.spanstyle}>${totalPastDueProcessed}</span>/${totalPastDueAmount}M
+            <span className={classes.spanstyle}>${totalPastDueProcessed}</span><span className={classes.spandivision}>/</span><span className={classes.spanmax}>${totalPastDueAmount}M</span>
             </div>
             <div style={{color:'#5DAAE0'}}>
             <Typography className={classes.subtitlespan}>  Total Past Due Touched </Typography>

@@ -5,7 +5,6 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import FreedaIcon from './images/Freeda.svg';
 import SearchIcon from './images/search.svg';
 import { getData } from './apicall/Apicalling';
-import Body from './Body';
 import InputBase from '@material-ui/core/InputBase';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import Footer from './Footer';
@@ -14,7 +13,7 @@ import RightIc from './images/Right.svg';
 import Tabfile from './Tabfile';
 import HomePage from '../src/views/HomePage'
 import Fab from '@material-ui/core/Fab';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import Loading from './Loading'
  const useStyles = makeStyles(theme => ({
   
    root:{
@@ -48,10 +47,12 @@ header: {
 headerarrow: {
   marginTop:'1.5vh',
   marginRight:'1vw',
-  marginLeft:'-4vw',
+  marginLeft:'-2vw',
   fontSize:'1.9vw',
   color:'white',
- 
+  ['@media (min-width:982px)']:{
+    marginLeft:'-0.2vw',
+  },
 },
 title: {
   fontSize:'1vw',
@@ -99,7 +100,7 @@ freedadiv:{
   
   
   justifyContent:'space-around',
-   marginLeft:'7vw',
+   marginLeft:'12vw',
    ['@media (min-width:1920px)']:{
     width:'8vw',
     height:'7vh',
@@ -121,11 +122,11 @@ freedadiv:{
     display:'flex',
     justifyContent:'center',
     backgroundColor:'#FC7500',
-    width:'11vw',
+    width:'10.5vw',
     height:'2.5vh',
     border:'1px solid #FC7500 ',
-    borderBottomLeftRadius:'30vw',
-    borderBottomRightRadius:'30vw',
+    borderBottomLeftRadius:'50vw',
+    borderBottomRightRadius:'50vw',
     marginLeft:'20vw',
     ['@media (min-width:3840px)']:{
       borderBottomLeftRadius:'30vw',
@@ -147,11 +148,11 @@ freedadiv:{
 }));
 function MainContent() {
   const classes = useStyles(); 
-  // const [value, setValue] = useState(0);
+  const [value, setValue] = useState(0);
 
-  // const handleChange = (event, newValue) => {
-  //   setValue(newValue);
-  // }
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  }
   const [data, setData]=React.useState(null);
 
   useEffect(() => {
@@ -198,11 +199,14 @@ return (
   </div> 
   
  {/* Charts */}
-    <div className={classes.content}>
-    
-    <HomePage data={data && data.workbookItems}/>
+
+ 
+  <div className={classes.content}>
   
+    <HomePage data={data && data.workbookItems}/>
+   {/* <Loading/> */}
     </div>
+    
     {/* Footer */}
     <div className={classes.footer}>
     <Footer data={data && data.workbookItems}/>
