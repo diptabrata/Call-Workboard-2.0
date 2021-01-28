@@ -7,6 +7,7 @@ import SearchIcon from './images/search.svg';
 import { getData } from './apicall/Apicalling';
 import InputBase from '@material-ui/core/InputBase';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import clsx from "clsx";
 import Footer from './Footer';
 import LeftIc from './images/Left.svg';
 import RightIc from './images/Right.svg';
@@ -14,6 +15,9 @@ import Tabfile from './Tabfile';
 import HomePage from '../src/views/HomePage'
 import Fab from '@material-ui/core/Fab';
 import Loading from './Loading'
+import {CssBaseline, Drawer} from "@material-ui/core";
+import Freeda from './Freeda';
+import { useDispatch, useSelector } from 'react-redux';
  const useStyles = makeStyles(theme => ({
   
    root:{
@@ -97,7 +101,9 @@ freedadiv:{
   borderRadius:'10vw',  
   display:'flex',
   height:'7vh',
-  
+  "&:hover": {
+    backgroundColor:'#FC7500', 
+  },
   
   justifyContent:'space-around',
    marginLeft:'12vw',
@@ -147,12 +153,15 @@ freedadiv:{
 
 }));
 function MainContent() {
-  const classes = useStyles(); 
-  const [value, setValue] = useState(0);
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  }
+  const counter=useSelector( (state)=> state.toggle);  
+  const dispatch=useDispatch();
+  const classes = useStyles(); 
+  // const [value, setValue] = React.useState(0);
+
+  // const handleChange = (event, newValue) => {
+  //   setValue(newValue);
+  // };
   const [data, setData]=React.useState(null);
 
   useEffect(() => {
@@ -163,8 +172,7 @@ function MainContent() {
       fetchData();
   }, [])
 
-  
-// console.log("MAIN",data);
+ 
 return (
   
   <main className={classes.fullWidth}>
@@ -185,11 +193,12 @@ return (
       <InputBase className={classes.Searchinput} placeholder="Search Name"/>
       <ArrowDropDownIcon />
         </div>
-       <Fab variant="extended" className={classes.freedadiv} >
+       <Fab variant="raised" className={classes.freedadiv} onClick={(()=> dispatch({type:'TOGGLE'}))}>
         <Typography variant='h6'  style={{color:'white',display:'flex', alignItems:'center',fontFamily:'Roboto,Regular' , fontSize:'1.2vw'}}> FREEDA
         <img src={FreedaIcon} alt="FreedaIcon" className={classes.Icon}  />
        </Typography>
        </Fab>
+       <Freeda open={counter} dispatch={dispatch}/>
         </Typography>
     </div>
    
@@ -211,6 +220,9 @@ return (
     <div className={classes.footer}>
     <Footer data={data && data.workbookItems}/>
     </div>
+    <CssBaseline />
+
+
   </main>
 
 );

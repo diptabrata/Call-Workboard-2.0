@@ -27,7 +27,7 @@ const Histogram = (props) => {
         legend:{
           enabled:false
         },
-
+        
         yAxis:{
         gridLineWidth:0,
           labels:{
@@ -98,6 +98,10 @@ const Histogram = (props) => {
         },
         title: {
           text: undefined
+      },
+      
+      tooltip: {
+        enabled:false
       },
      
         series: [{

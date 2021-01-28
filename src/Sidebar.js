@@ -156,7 +156,7 @@ const SideBar = () => {
         </div>
       </div>
        <CssBaseline />
-      <Drawer open={open} onClose={() => setOpen(false)}>
+      <Drawer open={open} onClose={() => setOpen(false)} transitionDuration={{enter:300,exit:800}}  >
       <List disablePadding className={classes.drawer} >
         <ListItem >    
         <IconButton

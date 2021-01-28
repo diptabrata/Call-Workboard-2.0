@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
 
 footer: {
    padding:'0%',
-   height:'4.5vh',
+   height:'10vh',
   // position:'fixed',
   
   display : 'flex',

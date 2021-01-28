@@ -11,11 +11,12 @@ constructor(props){
   this.customerIndex=-1;
 
 }
-//  componentDidMount(){
-//    window.addEventListener("resize",()=>this.customerIndex=-1)
-//  }
+ 
   getComponent = componentID => {
-
+    if (this.customerIndex >=5)
+    {
+      this.customerIndex=-1;
+    }
       this.customerIndex+=1;  
 
       return <ComponentGetter totaldata={this.props.data.slice(6,this.props.data.length)} componentID={componentID} data={this.props.data && this.props.data[this.customerIndex]}/>;
