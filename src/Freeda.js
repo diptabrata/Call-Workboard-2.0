@@ -6,7 +6,7 @@ import FreedaIcon from './images/Freeda.svg';
 const useStyles = makeStyles(theme => ({
 root:{
     display:'flex',
-    width:'37vh',
+    width:'25vw',
     backgroundColor:'#2D4250',
     flexDirection:'column',
     height:'100vh',

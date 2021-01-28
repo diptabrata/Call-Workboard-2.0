@@ -59,6 +59,7 @@ else{
        </div>
        
         <div className={classes.root}>
+      
             <Histogram number={num} Pendingamount={Pendingamount} BName={BName} totalopenamount={totalopenamount}/>
             <Divider orientation="vertical" style={{backgroundColor:'#FFFFFF80',opacity:'10%'}} flexItem />
            <div style={{display:'flex',flexDirection:'column',justifyContent:'center'}}>

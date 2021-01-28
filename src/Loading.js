@@ -5,10 +5,10 @@ import { render } from '@testing-library/react';
 
 export default function Loading (){
  
-    
+   
         return(
-            <div style={{display:'flex',justifyContent:'center'}}>
-            <CircularProgress size="50rem" color="blue"/>
+            <div style={{display:'flex',justifyContent:'center',color:"blue",marginBottom:'10%',marginTop:'10%'}}>
+            <CircularProgress size="20rem" color="blue"/>
             </div>
           
         );

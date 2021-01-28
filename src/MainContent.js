@@ -21,7 +21,7 @@ import { useDispatch, useSelector } from 'react-redux';
  const useStyles = makeStyles(theme => ({
   
    root:{
-     flexGrow:1,
+     flexGrow:0,
      backgroundColor:'#58687E',
    },
  content: {
@@ -153,7 +153,7 @@ freedadiv:{
 
 }));
 function MainContent() {
-
+ 
   const counter=useSelector( (state)=> state.toggle);  
   const dispatch=useDispatch();
   const classes = useStyles(); 
@@ -177,6 +177,7 @@ return (
   
   <main className={classes.fullWidth}>
     {/* Header */}
+    
     <div >
   
       <Typography variant='h6'className={classes.header}  >
@@ -201,7 +202,7 @@ return (
        <Freeda open={counter} dispatch={dispatch}/>
         </Typography>
     </div>
-   
+    
   {/* Tabs & Summary */}
   <div>
   <Tabfile data={data && data}/>
@@ -209,7 +210,7 @@ return (
   
  {/* Charts */}
 
- 
+ {!data && <Loading/>}
   <div className={classes.content}>
   
     <HomePage data={data && data.workbookItems}/>
