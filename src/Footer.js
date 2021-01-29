@@ -1,7 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-
+import OrangeIcon from './images/orange.svg';
+import BlueIcon from './images/blue.svg';
 const useStyles = makeStyles(theme => ({
  root: {
  
@@ -43,6 +44,7 @@ footer: {
 footerleft:{
    color:'#FFFFFFA6',
    marginLeft:'1.5vw',
+   display:'flex',
    ['@media (min-width:982px)']:{
   
     padding:'0%',
@@ -60,7 +62,14 @@ footerleft:{
     marginTop:'-0.1vh',
     padding:'0.1%',
    },
-}
+},
+footericon:{
+ height:'0.8rem',
+ width:'0.5rem',
+ display:'flex',
+ justifyContent:'space-between',
+columnGap:'0.3vw',
+},
 }));
 export default function Footer(props) {
  
@@ -82,7 +91,12 @@ return (
       </Typography>
        
     </div>
-   
+   <div className={classes.footericon}>
+     <img src={OrangeIcon} alt="icon"/>
+     <img src={BlueIcon} alt="icon"/>
+     <img src={BlueIcon} alt="icon"/>
+     <img src={BlueIcon} alt="icon"/>
+   </div>
     <div className={classes.footer}>
       
     <Typography > © Copyright 2020 HighRadius. All Rights Reserved. </Typography>

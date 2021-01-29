@@ -123,7 +123,7 @@ export default function Tabfile(props) {
         >
             
           <Tab label={<span className={classes.tabtext} style={{color:'white'}}>TO CALL LIST({totalcustcount})</span>}/>
-          <Tab label={<span className={classes.tabtext} >FINISHED CALL LIST({processedcustcount})</span>}/>
+          <Tab label={<span className={classes.tabtext} >FINISHED CALL LIST({processedcustcount})</span>} disabled='true'/>
         
         </Tabs>
       </div>

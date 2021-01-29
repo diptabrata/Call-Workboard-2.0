@@ -88,6 +88,7 @@ const Histogram = (props) => {
               $${Math.ceil((this.y)/1000)}M
               `;
               },
+              
                 
               },
             }

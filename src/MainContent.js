@@ -80,7 +80,7 @@ Searchbox:{
   alignItems:'center',
   height:'6vh',
   marginTop:'1vh',
- marginRight:'-2vw',
+ marginRight:'-9vw',
   ['@media (min-width:3840px)']:{
     borderRadius:'50px',
     height:'6vh',
@@ -106,7 +106,7 @@ freedadiv:{
   },
   
   justifyContent:'space-around',
-   marginLeft:'12vw',
+   marginLeft:'14vw',
    ['@media (min-width:1920px)']:{
     width:'8vw',
     height:'7vh',
