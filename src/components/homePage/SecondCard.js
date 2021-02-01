@@ -34,13 +34,13 @@ for (let i=0;i<6;i++)
 }
   
 }
-console.log("OPEN",totalopenamount)
-console.log("sum",Pendingamount)
+// console.log("OPEN",totalopenamount)
+// console.log("sum",Pendingamount)
 BName=data[0].bucketNames;
   // const Pendingamount=data?data.pastDueBucketDocumentAmount:[];
   
   // const totalopenamount=data?data.totalCurrentOpenAmount:'';
-console.log("BNAME",BName)
+// console.log("BNAME",BName)
     return (
   
       <Box boxShadow={10}  style={{backgroundColor:"#273D49BF",height:'37vh'}}>

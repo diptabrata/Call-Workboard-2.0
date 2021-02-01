@@ -25,9 +25,7 @@ import { useDispatch, useSelector } from 'react-redux';
      backgroundColor:'#58687E',
    },
  content: {
-  
-   
-    
+   display:'flex'
 },
 fullWidth: {
   width:'auto',
@@ -157,11 +155,7 @@ function MainContent() {
   const counter=useSelector( (state)=> state.toggle);  
   const dispatch=useDispatch();
   const classes = useStyles(); 
-  // const [value, setValue] = React.useState(0);
-
-  // const handleChange = (event, newValue) => {
-  //   setValue(newValue);
-  // };
+  
   const [data, setData]=React.useState(null);
 
   useEffect(() => {

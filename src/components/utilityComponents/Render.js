@@ -4,7 +4,7 @@ import withWidth from "@material-ui/core/withWidth";
 import layoutConfig from "../../layout-config/layoutConfig.json";
 import ComponentGetter from "../../utils/component-getters/ComponentGetter";
 import FlexGrid from "./FlexGrid";
-import Loading from '../../Loading';
+
 class Render extends Component {
 constructor(props){
   super(props)
